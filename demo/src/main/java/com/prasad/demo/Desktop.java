@@ -5,9 +5,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Primary
-public class Laptop implements Computer{
-
+public class Desktop implements Computer{
     public void compile(){
-        System.out.println("compiling code on laptop");
+        System.out.println("Compiling on Computer");
     }
 }

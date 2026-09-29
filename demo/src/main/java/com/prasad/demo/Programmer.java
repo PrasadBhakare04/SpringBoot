@@ -1,13 +1,15 @@
 package com.prasad.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Programmer {
     // Field injection
     @Autowired
-    private Laptop laptop;
+    @Qualifier("laptop")
+    private Computer comp;
 
 //-----------------------------------------------------
     //Constructor injection
@@ -25,7 +27,7 @@ public class Programmer {
 //    }
 
     public void build(){
-        laptop.compile();
+        comp.compile();
     }
 
 }
