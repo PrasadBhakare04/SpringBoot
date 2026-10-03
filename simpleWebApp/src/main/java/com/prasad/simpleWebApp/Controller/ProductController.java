@@ -29,4 +29,17 @@ public class ProductController {
         service.addProduct(product);
         return product;
     }
+
+    @PutMapping
+    public Product updateProduct(@RequestBody Product product){
+        service.updateProduct(product);
+        return product;
+    }
+
+    @DeleteMapping("/{id}")
+    public Product deleteProduct(@PathVariable int id){
+        Product deletedProduct = service.getProduct(id);
+        service.deleteProduct(id);
+        return deletedProduct;
+    }
 }

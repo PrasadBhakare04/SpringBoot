@@ -34,4 +34,32 @@ public class ProductService {
         System.out.println(product.getProdName());
     }
 
+    public void updateProduct(Product product){
+        int idx = -1;
+        for(int i = 0; i < products.size(); i++){
+            if(products.get(i).getProdId() == product.getProdId()){
+                idx = i;
+                break;
+            }
+        }
+
+        if(idx == -1){
+            System.out.println("Product not found new product created");
+             products.add(product);
+        }
+
+        else{
+             products.set(idx, product);
+        }
+    }
+
+    public void deleteProduct(int id){
+        for(int i = 0; i < products.size(); i++){
+            if(products.get(i).getProdId() == id){
+                products.remove(i);
+                break;
+            }
+        }
+    }
+
 }
