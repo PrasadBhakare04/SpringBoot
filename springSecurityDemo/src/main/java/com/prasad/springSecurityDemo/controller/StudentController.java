@@ -21,10 +21,10 @@ public class StudentController {
         return service.getStudents();
     }
 
-    @GetMapping("/token")
-    public CsrfToken getCsrfToken(HttpServletRequest request){
-        return (CsrfToken) request.getAttribute("_csrf");
-    }
+//    @GetMapping("/token")
+//    public CsrfToken getCsrfToken(HttpServletRequest request){
+//        return (CsrfToken) request.getAttribute("_csrf");
+//    }
 
     @PostMapping
     public Student createStudent(@RequestBody Student student){
