@@ -19,4 +19,9 @@ public class UsersController {
         service.addUser(user);
         return ("User added " + user.getUsername() + " " + user.getPassword());
     }
+
+    @PostMapping("/login")
+    public String login(@RequestBody Users user){
+        return service.verify(user);
+    }
 }
